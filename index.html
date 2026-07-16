@@ -1,13 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Testing JavaScript</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Apply JavaScript example</title>
+        <script type="module" src="apply-script.js"></script>
     </head>
     <body>
-        <h1 style="text-align: center">Probando JavaScript!</h1>
-        <button>PLAYER 1: NULL</button>
-        <script src="script.js"></script>
+        <button>Click me</button>
+        <button>No, click me!</button>
+        <button>jojojo</button>
     </body>
+    <!-- It's comented to test another way to put an script into our html -->
+    <!--<script>
+        function createParagraph() {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = "Haz clickeado el boton!!";
+            document.body.appendChild(paragraph);
+        }
+
+        const buttons = document.querySelectorAll("button");
+        for (const button of buttons) {
+            button.addEventListener("click", createParagraph);
+        }
+    </script>-->
 </html>
