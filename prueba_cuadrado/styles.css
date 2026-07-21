@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cuadrado {
+    align-self: center;
+    height: 500px;
+    width: 500px;
+    background-color: green;
+}
