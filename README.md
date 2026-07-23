@@ -1,3 +1,3 @@
-# Learning JavaScript
+# CARPETA DE PRUEBAS DE JS
 
-This will be my first (after years) JavaScript project in which I want to refresh and really learn deeply this programming language.
+Este repo utilizaré para ir haciendo algunas pruebas sobre lo que voy aprendiendo en el curso básico de JavaScript de The Odin Project
