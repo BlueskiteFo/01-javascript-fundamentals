@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                justify-content: center;
+            }
+
+            li {
+                padding: 12px;
+            }
+        </style>
+        <title>PruebaScript</title>
+    </head>
+    <body>
+        <h1>Probando script</h1>
+        <ul></ul>
+
+        <script>
+            const ul = document.querySelector("ul");
+
+            function fizzBuzz(n) {
+                if (n % 3 === 0 && n % 5 === 0) return "FizzBuzz";
+                else if (n % 3 === 0) return "Fizz";
+                else if (n % 5 === 0) return "Buzz";
+                return n;
+            }
+
+            function getNatural() {
+                let num = null;
+                while (true) {
+                    const input = prompt("Write a number!");
+                    if (input === null) return false;
+                    num = +input;
+
+                    if (Number.isInteger(num) && num > 0) break;
+                    else alert("Please, write a natural number");
+                }
+                return num;
+            }
+
+            function play() {
+                while (true) {
+                    let num = getNatural();
+                    if (!num) return alert("Goodbye!");
+                    let result = fizzBuzz(num);
+                    const newLi = document.createElement("li");
+                    newLi.textContent = result;
+                    ul.appendChild(newLi);
+                }
+            }
+
+            play();
+        </script>
+    </body>
+</html>
