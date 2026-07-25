@@ -1,0 +1,63 @@
+<!--Write a program that reads ten numbers and figure out which number is the third highest-->
+
+<!--First, create a list of ten numbers. Then, select one and start comparing it with the other ones in the list. If one is higher, use that one to compare in the next round until it's the biggest one. Now, rest the other values to the higher one and look for the smaller one. -->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
+        <title>Third max of ten</title>
+    </head>
+    <body>
+        <h1>We'll found the third largest number from this list!</h1>
+        <h3></h3>
+        <h2></h2>
+
+        <script>
+            const h3 = document.querySelector("h3");
+            const h2 = document.querySelector("h2");
+
+            const lista = Array.from(
+                { length: 10 },
+                () => Math.floor(Math.random() * 100) + 1,
+            );
+
+            for (let i = 0; i < lista.length; i++) {
+                if (i === lista.length - 1) {
+                    h3.textContent += lista[i];
+                } else {
+                    h3.textContent += lista[i] + ", ";
+                }
+            }
+
+            function foundLargest(list) {
+                let num = list[0];
+                for (let i = 0; i < list.length; i++) {
+                    if (num >= list[i]) continue;
+                    else num = list[i];
+                }
+                return num;
+            }
+
+            function thirdLargest(list) {
+                for (let i = 0; i < 2; i++) {
+                    const maxNum = foundLargest(list);
+                    const maxIndex = list.indexOf(maxNum);
+                    list.splice(maxIndex, 1);
+                }
+                return foundLargest(list);
+            }
+
+            h2.textContent =
+                "The third largest number is: " + thirdLargest(lista);
+        </script>
+    </body>
+</html>
