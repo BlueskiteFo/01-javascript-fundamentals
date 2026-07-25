@@ -41,8 +41,7 @@
             function foundLargest(list) {
                 let num = list[0];
                 for (let i = 0; i < list.length; i++) {
-                    if (num >= list[i]) continue;
-                    else num = list[i];
+                    if (num < list[i]) num = list[i];
                 }
                 return num;
             }
